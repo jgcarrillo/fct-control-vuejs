@@ -1,29 +1,30 @@
-# fct-control-vuejs
+# Control a list of task with Vue, Vuex and Vite
 
-This template should help get you started developing with Vue 3 in Vite.
+<div align="center">
+    <b>Create, edit and delete a list of task</b>
+</div>
 
-## Recommended IDE Setup
+## Table of contents 👇
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- [✨ Main purpose](#-main-purpose)
+- [🔥 Set the project locally](#-set-the-project-locally)
+- [🚀 Netlify deployment](#-netlify-deployment)
+- [🎢 Future improvements](#-future-improvements)
+- [🌎 Contact](#-contact)
 
-## Customize configuration
+## ✨ Main purpose
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## 🔥 Set the project locally
 
-## Project Setup
+## 🚀 Netlify deployment
 
-```sh
-npm install
-```
+## 🎢 Future improvements
 
-### Compile and Hot-Reload for Development
+## 🌎 Contact
 
-```sh
-npm run dev
-```
+If you have some doubts or need to ask something about the project, feel free to reach me here:
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+- Twitter: [https://twitter.com/jgcarrillo](https://twitter.com/jgcarrillo_)
+- LinkedIn: [https://es.linkedin.com/in/jgcarrilloweb](https://es.linkedin.com/in/jgcarrilloweb)
+- Website: [https://jgcarrillo.com/](https://jgcarrillo.com/)
+- Stackoverflow: [https://stackoverflow.com/users/18326020/jgcarrillo](https://stackoverflow.com/users/18326020/jgcarrillo)
