@@ -14,5 +14,15 @@
 </template>
 
 <script>
-export default {};
+import TheData from './components/layout/TheData.vue';
+import TheNavbar from './components/layout/TheNavbar.vue';
+import TheUser from './components/layout/TheUser.vue';
+
+export default {
+  components: {
+    TheNavbar,
+    TheData,
+    TheUser,
+  },
+};
 </script>
