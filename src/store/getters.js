@@ -1,1 +1,5 @@
-export default {};
+export default {
+  getTasks(state) {
+    return state.tasks;
+  },
+};

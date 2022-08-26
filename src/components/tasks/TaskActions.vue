@@ -1,8 +1,8 @@
 <template>
-  <form>
-    <button>Añadir tarea</button>
-    <button>Deshacer cambios</button>
-  </form>
+  <section class="border">
+    <base-button>Añadir tarea</base-button>
+    <base-button>Deshacer cambios</base-button>
+  </section>
 </template>
 
 <script>

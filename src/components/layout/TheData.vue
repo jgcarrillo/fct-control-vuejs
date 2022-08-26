@@ -1,10 +1,11 @@
 <template>
-  <div>
+  <section class="border">
     <h2>Tareas de los programas formativos</h2>
-  </div>
-  <div><strong>Alumno </strong>{{ studentToUpperCase }}</div>
-  <div><strong>NRE </strong>{{ nre }}</div>
-  <div><strong>Curso </strong>{{ course }}</div>
+
+    <div><strong>Alumno </strong>{{ studentToUpperCase }}</div>
+    <div><strong>NRE </strong>{{ nre }}</div>
+    <div><strong>Curso </strong>{{ course }}</div>
+  </section>
 </template>
 
 <script>

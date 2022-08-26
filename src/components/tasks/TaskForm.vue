@@ -1,5 +1,7 @@
 <template>
-  <h2>Tareas del programa: {{ program }}</h2>
+  <section class="border">
+    <h2>Tareas del programa: {{ program }}</h2>
+  </section>
 </template>
 
 <script>

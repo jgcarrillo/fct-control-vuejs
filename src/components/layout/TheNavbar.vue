@@ -1,13 +1,13 @@
 <template>
-  <ul>
+  <ul class="border">
     <li>
-      <router-link to="/">Home</router-link>
+      <base-button link mode="nav">Home</base-button>
     </li>
     <li>
-      <router-link to="/fct">FCT</router-link>
+      <base-button link mode="nav" to="/fct">FCT</base-button>
     </li>
     <li>
-      <router-link to="/about">About</router-link>
+      <base-button link mode="nav" to="/about">About</base-button>
     </li>
   </ul>
 </template>
