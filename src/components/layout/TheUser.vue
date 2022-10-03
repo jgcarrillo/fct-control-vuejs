@@ -1,8 +1,8 @@
 <template>
-  <section class="border">
-    <h2>Tareas de mis programas</h2>
-    <table>
-      <thead>
+  <div class="mb-5 overflow-x-auto">
+    <h2 class="font-xl md:text-2xl font-bold mb-2">Tareas de mis programas</h2>
+    <table class="table-auto border w-full text-center text-xs md:text-base">
+      <thead class="bg-gray-300">
         <tr>
           <th>Conv/anex/prog</th>
           <th>Enseñanza</th>
@@ -23,7 +23,7 @@
         </tr>
       </tbody>
     </table>
-  </section>
+  </div>
 </template>
 
 <script>

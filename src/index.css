@@ -2,7 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-.border {
-  border: 2px solid black;
-  margin-bottom: 0.5em;
+.nav-custom-link {
+  @apply text-lg font-bold text-blue-600 hover:text-blue-400 transition duration-300 ease-in-out;
+}
+
+.student-data-name {
+  @apply font-bold text-sm text-gray-500;
+}
+
+.footer-text {
+  @apply text-sm font-bold;
 }

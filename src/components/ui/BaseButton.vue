@@ -1,8 +1,8 @@
 <template>
-  <button v-if="!link" :class="mode">
+  <button v-if="!link" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300">
     <slot></slot>
   </button>
-  <router-link v-else :to="to" :class="mode">
+  <router-link v-else :to="to">
     <slot></slot>
   </router-link>
 </template>
@@ -10,11 +10,6 @@
 <script>
 export default {
   props: {
-    mode: {
-      type: String,
-      required: false,
-      default: null,
-    },
     link: {
       type: Boolean,
       required: false,
@@ -28,26 +23,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-button,
-a {
-  background-color: red;
-  color: white;
-  padding: 0.5em;
-  margin: 0.2em;
-  border-radius: 0.5em;
-  cursor: pointer;
-  transition: all 300ms;
-}
-
-.nav {
-  background-color: lightblue;
-  color: black;
-}
-
-button:hover,
-a:hover {
-  background-color: tomato;
-}
-</style>

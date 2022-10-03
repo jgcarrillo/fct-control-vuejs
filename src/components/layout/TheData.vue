@@ -1,11 +1,13 @@
 <template>
-  <section class="border">
-    <h2>Tareas de los programas formativos</h2>
+  <div class="border-2 border-yellow-500 mb-5">
+    <h2 class="text-xl bg-yellow-500 text-white font-bold p-1 text-center md:text-left">Tareas de los programas formativos</h2>
 
-    <div><strong>Alumno </strong>{{ studentToUpperCase }}</div>
-    <div><strong>NRE </strong>{{ nre }}</div>
-    <div><strong>Curso </strong>{{ course }}</div>
-  </section>
+    <div class="flex flex-col p-2 items-center mx-auto justify-between md:flex-row">
+      <div><span class="student-data-name">Alumno </span>{{ studentToUpperCase }}</div>
+      <div><span class="student-data-name">NRE </span>{{ nre }}</div>
+      <div><span class="student-data-name">Curso </span>{{ course }}</div>
+    </div>
+  </div>
 </template>
 
 <script>

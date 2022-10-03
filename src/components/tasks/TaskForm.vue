@@ -1,7 +1,7 @@
 <template>
-  <section class="border">
-    <h2>Tareas del programa: {{ program }}</h2>
-  </section>
+  <div class="flex flex-row mb-5">
+    <h2 class="text-xl">Tareas del programa: {{ program }}</h2>
+  </div>
 </template>
 
 <script>
