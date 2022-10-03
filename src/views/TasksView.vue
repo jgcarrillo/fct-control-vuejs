@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col m-5 md:my-10 md:mx-20">
-    <the-data student="Jorge Gómez Carrillo" nre="3161216" course="2021/2022"></the-data>
+    <the-data student="Jorge Gómez Carrillo" nre="6587452" course="2022/2023"></the-data>
     <the-user
       number="45587854/878-9-8"
       education="Desarrollo de Aplicaciones Web - LOE"
