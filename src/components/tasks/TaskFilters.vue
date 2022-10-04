@@ -32,8 +32,7 @@ export default {
     };
   },
   methods: {
-    handleCloseData(e) {
-      console.log(e);
+    handleCloseData() {
       this.isOpenData = false;
     },
     handleCloseTask() {

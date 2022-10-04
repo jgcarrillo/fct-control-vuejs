@@ -7,10 +7,11 @@ export default {
       startDate: data.startDate,
       endDate: data.endDate,
       hours: data.hours,
-      isValidateByTutor: data.isValidateByTutor,
-      isValidateByCompany: data.isValidateByCompany,
     };
 
     context.commit('addTask', taskData);
+  },
+  setUserData(context, data) {
+    context.commit('setUserData', data);
   },
 };
