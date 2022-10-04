@@ -1,11 +1,11 @@
 <template>
   <div class="w-full">
     <ul class="flex flex-row max-w-screen-xl p-5 mx-auto items-center justify-between">
-      <li class="nav-custom-link">
-        <base-button link to="/">Control FCT</base-button>
+      <li>
+        <base-button link to="/" class="nav-custom-link">Control FCT</base-button>
       </li>
-      <li class="nav-custom-link">
-        <base-button link to="/about">Sobre el proyecto</base-button>
+      <li>
+        <base-button link to="/about" class="nav-custom-link">Sobre el proyecto</base-button>
       </li>
     </ul>
   </div>

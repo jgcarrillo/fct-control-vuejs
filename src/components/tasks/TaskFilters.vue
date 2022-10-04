@@ -1,12 +1,52 @@
 <template>
   <div class="flex flex-row justify-end space-x-4 mb-5">
-    <base-button>Añadir datos</base-button>
-    <base-button>Añadir tarea</base-button>
-    <base-button>Buscar</base-button>
-    <base-button>Más filtros</base-button>
+    <base-button class="base-button" id="data" @click="handleOpen('data', $event)">Añadir datos</base-button>
+    <base-button class="base-button" id="task" @click="handleOpen('task', $event)">Añadir tarea</base-button>
+    <base-button class="base-button">Buscar</base-button>
+    <base-button class="base-button">Más filtros</base-button>
   </div>
+
+  <base-modal :show="isOpenData" @close="handleCloseData" title="Añade tus datos académicos">
+    <user-data-form></user-data-form>
+  </base-modal>
+  <base-modal :show="isOpenTask" @close="handleCloseTask" title="Introduce una tarea">
+    <task-form></task-form>
+  </base-modal>
 </template>
 
 <script>
-export default {};
+import BaseModal from '../ui/BaseModal.vue';
+import UserDataForm from '../layout/UserDataForm.vue';
+import TaskForm from '../layout/TaskForm.vue';
+
+export default {
+  components: {
+    BaseModal,
+    UserDataForm,
+    TaskForm,
+  },
+  data() {
+    return {
+      isOpenData: false,
+      isOpenTask: false,
+    };
+  },
+  methods: {
+    handleCloseData(e) {
+      console.log(e);
+      this.isOpenData = false;
+    },
+    handleCloseTask() {
+      this.isOpenTask = false;
+    },
+    handleOpen(id, evt) {
+      if (evt.target.id === 'data') {
+        this.isOpenData = true;
+      }
+      if (evt.target.id === 'task') {
+        this.isOpenTask = true;
+      }
+    },
+  },
+};
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row mb-5">
+  <div class="flex flex-col mb-5">
     <h2 class="text-xl">Tareas del programa: {{ program }}</h2>
   </div>
 </template>

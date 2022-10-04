@@ -10,20 +10,20 @@
       hours="400"
     ></the-user>
     <task-filters></task-filters>
-    <task-form program="program-program"></task-form>
+    <task-data program="program-program"></task-data>
   </div>
 </template>
 
 <script>
 import TaskFilters from '../components/tasks/TaskFilters.vue';
-import TaskForm from '../components/tasks/TaskForm.vue';
+import TaskData from '../components/tasks/TaskData.vue';
 import TheData from '../components/layout/TheData.vue';
 import TheUser from '../components/layout/TheUser.vue';
 
 export default {
   components: {
     TaskFilters,
-    TaskForm,
+    TaskData,
     TheData,
     TheUser,
   },
