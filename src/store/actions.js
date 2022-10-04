@@ -1,13 +1,8 @@
+import { v4 as uuidv4 } from 'uuid';
+
 export default {
-  addTasks(context, data) {
-    const taskData = {
-      id: Math.floor(Math.random() + 1),
-      taskName: data.taskName,
-      content: data.content,
-      startDate: data.startDate,
-      endDate: data.endDate,
-      hours: data.hours,
-    };
+  addTask(context, data) {
+    const taskData = { ...data, id: uuidv4() };
 
     context.commit('addTask', taskData);
   },

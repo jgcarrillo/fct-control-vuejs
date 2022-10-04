@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 import { createStore } from 'vuex';
 
 import rootMutations from './mutations.js';
@@ -9,7 +10,7 @@ const store = createStore({
     return {
       tasks: [
         {
-          id: 't1',
+          id: uuidv4(),
           title: 'Mi primera tarea',
           description: 'Esta es mi primera tarea',
           startdate: '01/01/2022',
@@ -17,7 +18,7 @@ const store = createStore({
           hours: 8,
         },
         {
-          id: 't2',
+          id: uuidv4(),
           title: 'Mi segunda tarea',
           description: 'Esta es mi segunda tarea',
           startdate: '03/04/2022',

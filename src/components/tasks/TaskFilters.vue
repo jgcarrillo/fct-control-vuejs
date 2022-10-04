@@ -10,7 +10,7 @@
     <user-data-form @save-data="saveUserData"></user-data-form>
   </base-modal>
   <base-modal :show="isOpenTask" @close="handleCloseTask" title="Introduce una tarea">
-    <task-form></task-form>
+    <task-form @save-task="saveTask"></task-form>
   </base-modal>
 </template>
 
@@ -49,6 +49,10 @@ export default {
     saveUserData(data) {
       this.$store.dispatch('setUserData', data);
       this.isOpenData = false;
+    },
+    saveTask(data) {
+      this.$store.dispatch('addTask', data);
+      this.isOpenTask = false;
     },
   },
 };
