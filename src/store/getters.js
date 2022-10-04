@@ -8,4 +8,10 @@ export default {
   hasTasks(state) {
     return state.tasks && state.tasks.length > 0;
   },
+  getUserNumber(state) {
+    return state.number;
+  },
+  getUserEducation(state) {
+    return state.education;
+  },
 };

@@ -14,12 +14,12 @@
       </thead>
       <tbody>
         <tr>
-          <td>{{ number }}</td>
-          <td>{{ education }}</td>
-          <td>{{ company }}</td>
-          <td>{{ startDate }}</td>
-          <td>{{ endDate }}</td>
-          <td>{{ hours }}</td>
+          <td>{{ getUserNumber }}</td>
+          <td>{{ getUserEducation }}</td>
+          <td>{{ getUserData.company }}</td>
+          <td>{{ getUserData.startdate }}</td>
+          <td>{{ getUserData.enddate }}</td>
+          <td>{{ getUserData.hours }}</td>
         </tr>
       </tbody>
     </table>
@@ -28,30 +28,15 @@
 
 <script>
 export default {
-  props: {
-    number: {
-      type: String,
-      required: true,
+  computed: {
+    getUserData() {
+      return this.$store.getters['getUserData'];
     },
-    education: {
-      type: String,
-      required: true,
+    getUserNumber() {
+      return this.$store.getters['getUserNumber'];
     },
-    company: {
-      type: String,
-      required: true,
-    },
-    startDate: {
-      type: String,
-      required: true,
-    },
-    endDate: {
-      type: String,
-      required: true,
-    },
-    hours: {
-      type: String,
-      required: true,
+    getUserEducation() {
+      return this.$store.getters['getUserEducation'];
     },
   },
 };

@@ -2,8 +2,8 @@
   <div class="flex flex-col mb-5 mt-7">
     <h2 class="text-xl">Tareas del programa: {{ program }}</h2>
 
-    <table v-if="hasTasks" class="text-center mt-7">
-      <thead>
+    <table v-if="hasTasks" class="text-center mt-7 overflow-x-auto w-full text-sm">
+      <thead class="text-gray-700 uppercase">
         <tr>
           <th>#</th>
           <th>Título</th>
@@ -22,17 +22,29 @@
           <td>{{ task.startdate }}</td>
           <td>{{ task.enddate }}</td>
           <td>{{ task.hours }}</td>
-          <td>Editar</td>
-          <td>Borrar</td>
+          <td>
+            <base-button class="base-button mr-2">Editar</base-button>
+            <base-button class="base-button--red mr-2">Borrar</base-button>
+          </td>
         </tr>
       </tbody>
     </table>
-    <h3 v-else>No hay tareas para este programa</h3>
+    <h3
+      v-else
+      class="text-center text-2xl md:text-3xl mt-12 font-bold text-transparent bg-gradient-to-t bg-clip-text from-blue-500 to-green-500"
+    >
+      No hay tareas para este programa
+    </h3>
   </div>
 </template>
 
 <script>
+import BaseButton from '../ui/BaseButton.vue';
+
 export default {
+  components: {
+    BaseButton,
+  },
   props: {
     program: {
       type: String,

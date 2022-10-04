@@ -34,6 +34,8 @@ const store = createStore({
         enddate: '02/02/2022',
         hours: 400,
       },
+      number: '45587854/878-9-8',
+      education: 'Desarrollo de Aplicaciones Web - LOE',
     };
   },
   mutations: rootMutations,

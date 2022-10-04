@@ -7,7 +7,7 @@
   </div>
 
   <base-modal :show="isOpenData" @close="handleCloseData" title="Añade tus datos académicos">
-    <user-data-form></user-data-form>
+    <user-data-form @save-data="saveUserData"></user-data-form>
   </base-modal>
   <base-modal :show="isOpenTask" @close="handleCloseTask" title="Introduce una tarea">
     <task-form></task-form>
@@ -17,7 +17,7 @@
 <script>
 import BaseModal from '../ui/BaseModal.vue';
 import UserDataForm from '../layout/UserDataForm.vue';
-import TaskForm from '../layout/TaskForm.vue';
+import TaskForm from './TaskForm.vue';
 
 export default {
   components: {
@@ -45,6 +45,10 @@ export default {
       if (evt.target.id === 'task') {
         this.isOpenTask = true;
       }
+    },
+    saveUserData(data) {
+      this.$store.dispatch('setUserData', data);
+      this.isOpenData = false;
     },
   },
 };
