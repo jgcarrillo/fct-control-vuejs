@@ -14,4 +14,7 @@ export default {
   getUserEducation(state) {
     return state.education;
   },
+  getProgramName(state) {
+    return `${state.userData.name} - ${state.userData.company}`;
+  },
 };

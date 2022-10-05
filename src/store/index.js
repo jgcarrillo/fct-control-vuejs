@@ -27,7 +27,7 @@ const store = createStore({
         },
       ],
       userData: {
-        name: 'Jorge Gómez Carrillo',
+        name: 'Pedro García García',
         nre: '5452145',
         year: '2023/2024',
         company: 'Mi empresa',

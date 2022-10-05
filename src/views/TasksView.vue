@@ -1,16 +1,9 @@
 <template>
   <div class="flex flex-col m-5 md:my-10 md:mx-20">
     <the-data></the-data>
-    <the-user
-      number="45587854/878-9-8"
-      education="Desarrollo de Aplicaciones Web - LOE"
-      company="Your Company"
-      startDate="20-03-2022"
-      endDate="20-06-2022"
-      hours="400"
-    ></the-user>
+    <the-user></the-user>
     <task-filters></task-filters>
-    <task-data program="program-program"></task-data>
+    <task-data :program="getProgramName"></task-data>
   </div>
 </template>
 
@@ -26,6 +19,12 @@ export default {
     TaskData,
     TheData,
     TheUser,
+  },
+  computed: {
+    getProgramName() {
+      const programName = this.$store.getters['getProgramName'];
+      return programName;
+    },
   },
 };
 </script>

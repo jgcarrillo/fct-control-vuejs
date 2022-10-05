@@ -1,7 +1,7 @@
 <template>
   <teleport to="body">
-    <div v-if="show" class="fixed top-0 right-0 left-0 z-50 w-full h-full md:inset-0 bg-slate-400 bg-opacity-40">
-      <transition name="modal">
+    <Transition name="modal">
+      <div v-if="show" class="fixed top-0 right-0 left-0 z-50 w-full h-full md:inset-0 bg-slate-400 bg-opacity-40">
         <div class="relative p-4 max-w-md mx-auto">
           <!-- Modal content -->
           <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
@@ -24,8 +24,8 @@
             </div>
           </div>
         </div>
-      </transition>
-    </div>
+      </div>
+    </Transition>
   </teleport>
 </template>
 
@@ -50,3 +50,15 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.modal-enter-active,
+.modal-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.modal-enter-from,
+.modal-leave-to {
+  opacity: 0;
+}
+</style>

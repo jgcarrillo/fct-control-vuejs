@@ -32,7 +32,16 @@
     </div>
     <div>
       <label for="hours" class="form-modal-label">Horas</label>
-      <input type="number" name="hours" id="hours" placeholder="8" class="form-modal-input" required v-model="hours.val" />
+      <input
+        type="number"
+        name="hours"
+        id="hours"
+        placeholder="8"
+        class="form-modal-input"
+        required
+        step="0.1"
+        v-model="hours.val"
+      />
     </div>
     <base-button class="base-button w-full">Introducir tarea</base-button>
   </form>

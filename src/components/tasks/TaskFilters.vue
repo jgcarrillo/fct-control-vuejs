@@ -1,6 +1,12 @@
 <template>
   <div class="flex flex-row justify-end space-x-4 mb-5">
-    <base-button class="base-button" id="data" @click="handleOpen('data', $event)">Añadir datos</base-button>
+    <base-button
+      v-tooltip="'Añade tus datos personales'"
+      class="base-button--outline"
+      id="data"
+      @click="handleOpen('data', $event)"
+      >Añadir datos</base-button
+    >
     <base-button class="base-button" id="task" @click="handleOpen('task', $event)">Añadir tarea</base-button>
     <base-button class="base-button">Buscar</base-button>
     <base-button class="base-button">Más filtros</base-button>

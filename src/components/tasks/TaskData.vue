@@ -1,9 +1,18 @@
 <template>
   <div class="flex flex-col mb-5 mt-7">
-    <h2 class="text-xl">Tareas del programa: {{ program }}</h2>
+    <div class="flex text-center flex-col md:flex-row justify-between">
+      <h2 class="text-xl underline underline-offset-4">Tareas del programa: {{ program }}</h2>
+      <h2 class="text-xl font-bold mt-1 md:m-0">
+        Horas restantes:
+        <span
+          class="text-center text-2xl md:text-2xl mt-12 font-bold text-transparent bg-gradient-to-t bg-clip-text from-blue-500 to-green-500"
+          >24 horas</span
+        >
+      </h2>
+    </div>
 
-    <table v-if="hasTasks" class="text-center mt-7 overflow-x-auto w-full text-sm">
-      <thead class="text-gray-700 uppercase">
+    <table v-if="hasTasks" class="text-center mt-16 overflow-x-auto w-full border-separate border-spacing-y-2">
+      <thead class="text-gray-700 uppercase text-sm">
         <tr>
           <th>#</th>
           <th>Título</th>
