@@ -8,10 +8,10 @@ export default {
     const taskData = { ...data, id: uuidv4() };
 
     context.commit('addTask', taskData);
-    toast.success('Tarea añadida!');
+    toast.success('¡Tarea añadida!');
   },
   setUserData(context, data) {
     context.commit('setUserData', data);
-    toast.success('Datos de usuario introducidos!');
+    toast.success('¡Datos de usuario introducidos!');
   },
 };

@@ -8,7 +8,7 @@
       :disabled="checkIsDisabled"
       >Añadir datos</base-button
     >
-    <base-button class="base-button" id="task" @click="handleOpen('task', $event)" :disabled="isDisabled"
+    <base-button class="base-button" id="task" @click="handleOpen('task', $event)" :disabled="checkIsDisabled"
       >Añadir tarea</base-button
     >
     <base-button class="base-button">Buscar</base-button>
@@ -38,7 +38,6 @@ export default {
     return {
       isOpenData: false,
       isOpenTask: false,
-      isDisabled: false,
     };
   },
   methods: {
@@ -69,7 +68,8 @@ export default {
     checkIsDisabled() {
       const getRemainingHours = this.$store.getters['getRemainingHours'];
 
-      if (getRemainingHours <= 0) this.isDisabled = true;
+      if (getRemainingHours <= 0) return true;
+      else return false;
     },
   },
 };
