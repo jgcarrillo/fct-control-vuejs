@@ -6,7 +6,7 @@
         Horas restantes:
         <span
           class="text-center text-2xl md:text-2xl mt-12 font-bold text-transparent bg-gradient-to-t bg-clip-text from-blue-500 to-green-500"
-          >{{ getRemainingHours }} horas</span
+          >{{ getRemainingHours <= 0 ? '¡FCT Completada!' : `${getRemainingHours} horas` }}</span
         >
       </h2>
     </div>

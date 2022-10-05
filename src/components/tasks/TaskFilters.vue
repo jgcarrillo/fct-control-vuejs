@@ -5,9 +5,12 @@
       class="base-button--outline"
       id="data"
       @click="handleOpen('data', $event)"
+      :disabled="checkIsDisabled"
       >Añadir datos</base-button
     >
-    <base-button class="base-button" id="task" @click="handleOpen('task', $event)">Añadir tarea</base-button>
+    <base-button class="base-button" id="task" @click="handleOpen('task', $event)" :disabled="isDisabled"
+      >Añadir tarea</base-button
+    >
     <base-button class="base-button">Buscar</base-button>
     <base-button class="base-button">Más filtros</base-button>
   </div>
@@ -35,6 +38,7 @@ export default {
     return {
       isOpenData: false,
       isOpenTask: false,
+      isDisabled: false,
     };
   },
   methods: {
@@ -59,6 +63,13 @@ export default {
     saveTask(data) {
       this.$store.dispatch('addTask', data);
       this.isOpenTask = false;
+    },
+  },
+  computed: {
+    checkIsDisabled() {
+      const getRemainingHours = this.$store.getters['getRemainingHours'];
+
+      if (getRemainingHours <= 0) this.isDisabled = true;
     },
   },
 };
