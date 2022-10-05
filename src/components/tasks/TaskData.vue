@@ -6,7 +6,7 @@
         Horas restantes:
         <span
           class="text-center text-2xl md:text-2xl mt-12 font-bold text-transparent bg-gradient-to-t bg-clip-text from-blue-500 to-green-500"
-          >24 horas</span
+          >{{ getRemainingHours }} horas</span
         >
       </h2>
     </div>
@@ -67,6 +67,10 @@ export default {
     },
     hasTasks() {
       return this.$store.getters['hasTasks'];
+    },
+    getRemainingHours() {
+      const remainingHours = this.$store.getters['getRemainingHours'];
+      return remainingHours;
     },
   },
 };

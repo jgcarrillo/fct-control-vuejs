@@ -17,4 +17,15 @@ export default {
   getProgramName(state) {
     return `${state.userData.name} - ${state.userData.company}`;
   },
+  getCountHours(state) {
+    let hoursCounter = 0;
+    for (const task of state.tasks) {
+      hoursCounter += task.hours;
+    }
+
+    return hoursCounter;
+  },
+  getRemainingHours(state, getters) {
+    return state.userData.hours - getters.getCountHours;
+  },
 };
