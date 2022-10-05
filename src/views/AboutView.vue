@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center justify-start m-2 md:my-5 mx-7">
+  <div class="flex flex-col items-center justify-start mx-16 md:mx-32 lg:mx-52">
     <div class="md:mb-10 md:mt-5 mb-5">
       <h2 class="text-3xl md:text-5xl font-bold text-slate-800">
         <span>Un nuevo </span>
