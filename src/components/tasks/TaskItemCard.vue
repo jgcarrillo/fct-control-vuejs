@@ -23,7 +23,7 @@
 
     <div class="flex items-center space-x-2 justify-center text-sm">
       <div>
-        <base-button class="base-button mr-2">Editar</base-button>
+        <base-button class="base-button mr-2" id="edit" @click="handleOpen($event)">Editar</base-button>
         <base-button class="base-button--red mr-2" id="delete" @click="handleOpen($event)">Borrar</base-button>
       </div>
     </div>
@@ -32,18 +32,23 @@
   <base-modal :show="isOpenDelete" @close="handleClose('isOpenDelete')" :title="`Borrar tarea - ${title}`">
     <task-delete :task="this.id" @delete="deleteTask"></task-delete>
   </base-modal>
+  <base-modal :show="isOpenEdit" @close="handleClose('isOpenEdit')" :title="`Editar tarea - ${title}`">
+    <task-form :task="getTask()"></task-form>
+  </base-modal>
 </template>
 
 <script>
 import BaseModal from '../ui/BaseModal.vue';
 import BaseButton from '../ui/BaseButton.vue';
 import TaskDelete from '../tasks/TaskDelete.vue';
+import TaskForm from '../tasks/TaskForm.vue';
 
 export default {
   components: {
     BaseButton,
     BaseModal,
     TaskDelete,
+    TaskForm,
   },
   props: {
     index: {
@@ -78,6 +83,7 @@ export default {
   data() {
     return {
       isOpenDelete: false,
+      isOpenEdit: false,
     };
   },
   methods: {
@@ -88,9 +94,22 @@ export default {
       if (evt.target.id === 'delete') {
         this.isOpenDelete = true;
       }
+      if (evt.target.id === 'edit') {
+        this.isOpenEdit = true;
+      }
     },
     deleteTask() {
       this.isOpenDelete = false;
+    },
+    getTask() {
+      return {
+        id: this.id,
+        title: this.title,
+        description: this.description,
+        startdate: this.startdate,
+        enddate: this.enddate,
+        hours: this.hours,
+      };
     },
   },
 };
