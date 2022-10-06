@@ -72,39 +72,46 @@
       />
       <p v-if="!hours.isValid">Task hours must not be empty.</p>
     </div>
-    <base-button class="base-button w-full">Introducir tarea</base-button>
+    <base-button class="base-button w-full">{{ this.task !== undefined ? 'Actualizar tarea' : 'Introducir tarea' }}</base-button>
   </form>
 </template>
 
 <script>
 import BaseButton from '../ui/BaseButton.vue';
-import { checkDates, formatDate } from '../../helpers/helpers';
+import { checkDates, formatDate, retrieveDate } from '../../helpers/helpers';
 
 export default {
   components: {
     BaseButton,
   },
   emits: ['save-task'],
+  props: {
+    task: {
+      type: Object,
+      required: false,
+      value: '',
+    },
+  },
   data() {
     return {
       title: {
-        val: '',
+        val: this.task?.title || '',
         isValid: true,
       },
       description: {
-        val: '',
+        val: this.task?.description || '',
         isValid: true,
       },
       startdate: {
-        val: '',
+        val: (this.task !== undefined ? retrieveDate(this.task?.startdate) : '') || '',
         isValid: true,
       },
       enddate: {
-        val: '',
+        val: (this.task !== undefined ? retrieveDate(this.task?.enddate) : '') || '',
         isValid: true,
       },
       hours: {
-        val: null,
+        val: this.task?.hours || '',
         isValid: true,
       },
       formIsValid: true,

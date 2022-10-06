@@ -24,18 +24,26 @@
     <div class="flex items-center space-x-2 justify-center text-sm">
       <div>
         <base-button class="base-button mr-2">Editar</base-button>
-        <base-button class="base-button--red mr-2">Borrar</base-button>
+        <base-button class="base-button--red mr-2" id="delete" @click="handleOpen($event)">Borrar</base-button>
       </div>
     </div>
   </div>
+
+  <base-modal :show="isOpenDelete" @close="handleClose('isOpenDelete')" :title="`Borrar tarea - ${title}`">
+    <task-delete :task="this.id" @delete="deleteTask"></task-delete>
+  </base-modal>
 </template>
 
 <script>
+import BaseModal from '../ui/BaseModal.vue';
 import BaseButton from '../ui/BaseButton.vue';
+import TaskDelete from '../tasks/TaskDelete.vue';
 
 export default {
   components: {
     BaseButton,
+    BaseModal,
+    TaskDelete,
   },
   props: {
     index: {
@@ -65,6 +73,24 @@ export default {
     hours: {
       type: Number,
       required: true,
+    },
+  },
+  data() {
+    return {
+      isOpenDelete: false,
+    };
+  },
+  methods: {
+    handleClose(data) {
+      this[data] = false;
+    },
+    handleOpen(evt) {
+      if (evt.target.id === 'delete') {
+        this.isOpenDelete = true;
+      }
+    },
+    deleteTask() {
+      this.isOpenDelete = false;
     },
   },
 };

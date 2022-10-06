@@ -19,3 +19,10 @@ export const checkYear = (year) => {
   if (expReg.test(year.trim())) return true;
   else return false;
 };
+
+export const retrieveDate = (date) => {
+  const [day, month, year] = date.split('/');
+  const formatedDate = `${year}-${month}-${day}`;
+
+  return formatedDate;
+};
