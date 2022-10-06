@@ -16,5 +16,6 @@ export default {
   },
   setTasks(context, tasks) {
     context.commit('setTasks', tasks);
+    toast.error('¡Tarea borrada!');
   },
 };
