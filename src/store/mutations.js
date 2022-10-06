@@ -5,4 +5,7 @@ export default {
   setUserData(state, payload) {
     state.userData = payload;
   },
+  setTasks(state, payload) {
+    state.tasks = payload;
+  },
 };

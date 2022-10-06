@@ -14,4 +14,7 @@ export default {
     context.commit('setUserData', data);
     toast.success('¡Datos de usuario introducidos!');
   },
+  setTasks(context, tasks) {
+    context.commit('setTasks', tasks);
+  },
 };

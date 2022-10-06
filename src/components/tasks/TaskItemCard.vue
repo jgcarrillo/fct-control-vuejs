@@ -1,7 +1,7 @@
 <template>
   <div class="p-4 rounded-lg shadow space-y-3">
     <div class="flex items-center space-x-2 justify-center text-sm">
-      <div class="font-bold text-blue-500 hover:underline">{{ `#${index + 1}` }}</div>
+      <div class="font-bold text-blue-500 hover:underline cursor-pointer">{{ `#${index + 1}` }}</div>
       <div class="text-gray-700 font-medium">{{ title }}</div>
     </div>
 
@@ -40,6 +40,10 @@ export default {
   props: {
     index: {
       type: Number,
+      required: true,
+    },
+    id: {
+      type: String,
       required: true,
     },
     title: {

@@ -106,7 +106,7 @@ export default {
   components: {
     BaseButton,
   },
-  emits: ['save-data', 'close'],
+  emits: ['save-data'],
   data() {
     return {
       name: {
@@ -141,9 +141,6 @@ export default {
     };
   },
   methods: {
-    closeModal() {
-      this.$emit('close');
-    },
     clearValidity(input) {
       this[input].isValid = true;
     },

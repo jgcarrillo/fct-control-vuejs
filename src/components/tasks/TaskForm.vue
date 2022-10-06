@@ -111,9 +111,6 @@ export default {
     };
   },
   methods: {
-    closeModal() {
-      this.$emit('close');
-    },
     clearValidity(input) {
       this[input].isValid = true;
     },
