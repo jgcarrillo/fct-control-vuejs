@@ -25,7 +25,8 @@
 
 <script>
 import BaseModal from '../ui/BaseModal.vue';
-import UserDataForm from '../layout/UserDataForm.vue';
+import UserDataFormVue from '../user/UserDataForm.vue';
+import UserDataForm from '../user/UserDataForm.vue';
 import TaskForm from './TaskForm.vue';
 
 export default {
