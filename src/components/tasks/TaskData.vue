@@ -26,53 +26,32 @@
           </tr>
         </thead>
         <tbody class="divide-y divide-gray-100">
-          <tr v-for="(task, index) in getTasks">
-            <td class="p-3 font-bold text-blue-500 hover:underline whitespace-nowrap">{{ `#${index + 1}` }}</td>
-            <td class="p-3 text-gray-700 whitespace-nowrap">{{ task.title }}</td>
-            <td class="p-3 text-gray-700 whitespace-nowrap">{{ task.description }}</td>
-            <td class="w-20 p-3 text-gray-700 whitespace-nowrap">{{ task.startdate }}</td>
-            <td class="w-20 p-3 text-gray-700 whitespace-nowrap">{{ task.enddate }}</td>
-            <td class="w-20 p-3 text-gray-700 whitespace-nowrap">{{ task.hours }}</td>
-            <td class="p-3 text-gray-700 whitespace-nowrap">
-              <base-button class="base-button mr-2">Editar</base-button>
-              <base-button class="base-button--red mr-2">Borrar</base-button>
-            </td>
-          </tr>
+          <task-item-table
+            v-for="(task, index) in getTasks"
+            :key="task.id"
+            :index="index"
+            :title="task.title"
+            :description="task.description"
+            :startdate="task.startdate"
+            :enddate="task.enddate"
+            :hours="task.hours"
+          ></task-item-table>
         </tbody>
       </table>
     </div>
 
     <!-- container for divs in sm -->
     <div v-if="hasTasks" class="grid grid-cols-1 gap-4 md:hidden mt-4">
-      <div v-for="(task, index) in getTasks" class="p-4 rounded-lg shadow space-y-3">
-        <div class="flex items-center space-x-2 justify-center text-sm">
-          <div class="font-bold text-blue-500 hover:underline">{{ `#${index + 1}` }}</div>
-          <div class="text-gray-700 font-medium">{{ task.title }}</div>
-        </div>
-
-        <div class="flex items-center space-x-2 justify-center text-sm">
-          <div>
-            F. Inicio: <span class="text-gray-500">{{ task.startdate }}</span>
-          </div>
-          <div>
-            F. Fin: <span class="text-gray-500">{{ task.enddate }}</span>
-          </div>
-          <div>
-            Horas: <span class="text-gray-500">{{ task.hours }}</span>
-          </div>
-        </div>
-
-        <div class="flex items-center space-x-2 justify-center text-sm">
-          <div class="text-gray-700">{{ task.description }}</div>
-        </div>
-
-        <div class="flex items-center space-x-2 justify-center text-sm">
-          <div>
-            <base-button class="base-button mr-2">Editar</base-button>
-            <base-button class="base-button--red mr-2">Borrar</base-button>
-          </div>
-        </div>
-      </div>
+      <task-item-card
+        v-for="(task, index) in getTasks"
+        :key="task.id"
+        :index="index"
+        :title="task.title"
+        :description="task.description"
+        :startdate="task.startdate"
+        :enddate="task.enddate"
+        :hours="task.hours"
+      ></task-item-card>
     </div>
 
     <h3
@@ -85,11 +64,13 @@
 </template>
 
 <script>
-import BaseButton from '../ui/BaseButton.vue';
+import TaskItemTable from './TaskItemTable.vue';
+import TaskItemCard from './TaskItemCard.vue';
 
 export default {
   components: {
-    BaseButton,
+    TaskItemTable,
+    TaskItemCard,
   },
   props: {
     program: {
