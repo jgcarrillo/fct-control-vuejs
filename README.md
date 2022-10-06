@@ -1,4 +1,4 @@
-# Control a list of task with Vue, Vuex and Vite
+# Control a list of tasks with Vue, Vuex and Vite
 
 <div align="center">
     <b>Create, edit and delete a list of task</b>

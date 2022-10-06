@@ -12,3 +12,10 @@ export const checkDates = (startdate, enddate) => {
   if (startdate > enddate) return false;
   else return true;
 };
+
+export const checkYear = (year) => {
+  let expReg = /^\d{4}\/\d{4}$/;
+
+  if (expReg.test(year.trim())) return true;
+  else return false;
+};
