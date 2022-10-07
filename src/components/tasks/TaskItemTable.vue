@@ -16,7 +16,7 @@
     <task-delete :task="this.id" @delete="deleteTask"></task-delete>
   </base-modal>
   <base-modal :show="isOpenEdit" @close="handleClose('isOpenEdit')" :title="`Editar tarea - ${title}`">
-    <task-form :task="getTask()"></task-form>
+    <task-form :edit="true" :task="getTask()" @update-task="updateTask"></task-form>
   </base-modal>
 </template>
 
@@ -93,6 +93,10 @@ export default {
         enddate: this.enddate,
         hours: this.hours,
       };
+    },
+    updateTask(task) {
+      this.isOpenEdit = false;
+      this.$store.dispatch('updateTask', task);
     },
   },
 };

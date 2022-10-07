@@ -72,7 +72,7 @@
       />
       <p v-if="!hours.isValid">Task hours must not be empty.</p>
     </div>
-    <base-button class="base-button w-full">{{ this.task !== undefined ? 'Actualizar tarea' : 'Introducir tarea' }}</base-button>
+    <base-button class="base-button w-full">{{ this.edit ? 'Actualizar tarea' : 'Introducir tarea' }}</base-button>
   </form>
 </template>
 
@@ -84,12 +84,17 @@ export default {
   components: {
     BaseButton,
   },
-  emits: ['save-task'],
+  emits: ['save-task', 'update-task'],
   props: {
     task: {
       type: Object,
       required: false,
       value: '',
+    },
+    edit: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
   },
   data() {
@@ -151,19 +156,36 @@ export default {
       }
     },
     submitForm() {
-      this.validateForm();
+      if (!this.edit) {
+        this.validateForm();
 
-      if (!this.formIsValid) return;
+        if (!this.formIsValid) return;
 
-      const taskData = {
-        title: this.title.val,
-        description: this.description.val,
-        startdate: formatDate(this.startdate.val),
-        enddate: formatDate(this.enddate.val),
-        hours: this.hours.val,
-      };
+        const taskData = {
+          title: this.title.val,
+          description: this.description.val,
+          startdate: formatDate(this.startdate.val),
+          enddate: formatDate(this.enddate.val),
+          hours: this.hours.val,
+        };
 
-      this.$emit('save-task', taskData);
+        this.$emit('save-task', taskData);
+      } else {
+        this.validateForm();
+
+        if (!this.formIsValid) return;
+
+        const taskData = {
+          id: this.task.id,
+          title: this.title.val,
+          description: this.description.val,
+          startdate: formatDate(this.startdate.val),
+          enddate: formatDate(this.enddate.val),
+          hours: this.hours.val,
+        };
+
+        this.$emit('update-task', taskData);
+      }
     },
   },
 };

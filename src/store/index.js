@@ -22,7 +22,7 @@ const store = createStore({
           title: 'Mi segunda tarea',
           description: 'Esta es mi segunda tarea',
           startdate: '03/04/2022',
-          enddate: '12/02/2022',
+          enddate: '12/04/2022',
           hours: 7,
         },
       ],

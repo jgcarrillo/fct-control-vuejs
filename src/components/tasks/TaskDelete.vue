@@ -19,10 +19,7 @@ export default {
   },
   methods: {
     deleteTask() {
-      const tasks = this.$store.getters['getTasks'];
-      const filtered = tasks.filter((task) => task.id !== this.task);
-
-      this.$store.dispatch('setTasks', filtered);
+      this.$store.dispatch('deleteTask', this.task);
 
       this.$emit('delete');
     },
