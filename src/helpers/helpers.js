@@ -26,3 +26,17 @@ export const retrieveDate = (date) => {
 
   return formatedDate;
 };
+
+export const getActualDate = () => {
+  const date = new Date();
+  const isoDate = date.toLocaleDateString();
+
+  const splitDate = isoDate.split('/');
+  let [day, month, year] = splitDate;
+
+  if (day >= 1 || day <= 9) {
+    day = `0${day}`;
+  }
+
+  return `${day}/${month}/${year}`;
+};

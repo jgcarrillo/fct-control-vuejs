@@ -1,19 +1,18 @@
 <template>
   <div class="flex flex-row justify-end space-x-4 mb-5">
-    <base-button
-      v-tooltip="'Añade tus datos personales'"
-      class="base-button--outline"
-      id="data"
-      @click="handleOpen($event)"
-      :disabled="checkIsDisabled"
-      >Añadir datos</base-button
-    >
-    <base-button class="base-button" id="task" @click="handleOpen($event)" :disabled="checkIsDisabled">Añadir tarea</base-button>
+    <base-button v-tooltip="'Añade tus datos personales'" class="base-button--outline" id="data" @click="handleOpen($event)">{{
+      getUserData.name !== '' ? 'Actualizar datos' : 'Añadir datos'
+    }}</base-button>
+    <base-button class="base-button" id="task" @click="handleOpen($event)">Añadir tarea</base-button>
     <base-button class="base-button" id="search" @click="handleOpen($event)">Buscar</base-button>
     <base-button class="base-button" id="filters" @click="handleOpen($event)">Más filtros</base-button>
   </div>
 
-  <base-modal :show="isOpenData" @close="handleClose('isOpenData')" title="Añade tus datos académicos">
+  <base-modal
+    :show="isOpenData"
+    @close="handleClose('isOpenData')"
+    :title="`${getUserData.name !== '' ? 'Actualiza tus datos académicos' : 'Añade tus datos académicos'}`"
+  >
     <user-data-form @save-data="saveUserData"></user-data-form>
   </base-modal>
   <base-modal :show="isOpenTask" @close="handleClose('isOpenTask')" title="Introduce una tarea">
@@ -78,11 +77,8 @@ export default {
     },
   },
   computed: {
-    checkIsDisabled() {
-      const getRemainingHours = this.$store.getters['getRemainingHours'];
-
-      if (getRemainingHours <= 0) return true;
-      else return false;
+    getUserData() {
+      return this.$store.getters['getUserData'];
     },
   },
 };

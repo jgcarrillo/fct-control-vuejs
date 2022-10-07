@@ -94,13 +94,15 @@
       />
       <p v-if="!hours.isValid">Hours must not be empty.</p>
     </div>
-    <base-button type="submit" class="base-button w-full">Introducir datos</base-button>
+    <base-button type="submit" class="base-button w-full">{{
+      getUserData().name !== '' ? 'Actualizar datos' : 'Introducir datos'
+    }}</base-button>
   </form>
 </template>
 
 <script>
 import BaseButton from '../ui/BaseButton.vue';
-import { checkYear, checkDates, formatDate } from '../../helpers/helpers';
+import { checkYear, checkDates, formatDate, retrieveDate } from '../../helpers/helpers';
 
 export default {
   components: {
@@ -110,31 +112,31 @@ export default {
   data() {
     return {
       name: {
-        val: '',
+        val: this.getUserData().name || '',
         isValid: true,
       },
       nre: {
-        val: '',
+        val: this.getUserData().nre || '',
         isValid: true,
       },
       year: {
-        val: '',
+        val: this.getUserData().year || '',
         isValid: true,
       },
       company: {
-        val: '',
+        val: this.getUserData().company || '',
         isValid: true,
       },
       startdate: {
-        val: '',
+        val: retrieveDate(this.getUserData().startdate) || '',
         isValid: true,
       },
       enddate: {
-        val: '',
+        val: retrieveDate(this.getUserData().enddate) || '',
         isValid: true,
       },
       hours: {
-        val: '',
+        val: this.getUserData().hours || '',
         isValid: true,
       },
       formIsValid: true,
@@ -197,6 +199,9 @@ export default {
       };
 
       this.$emit('save-data', formUserData);
+    },
+    getUserData() {
+      return this.$store.getters['getUserData'];
     },
   },
 };

@@ -4,6 +4,7 @@ import { createStore } from 'vuex';
 import rootMutations from './mutations.js';
 import rootActions from './actions.js';
 import rootGetters from './getters.js';
+import { getActualDate } from '../helpers/helpers';
 
 const store = createStore({
   state() {
@@ -27,12 +28,12 @@ const store = createStore({
         },
       ],
       userData: {
-        name: 'Pedro García García',
-        nre: '5452145',
-        year: '2023/2024',
-        company: 'Mi empresa',
-        startdate: '01/01/2022',
-        enddate: '02/02/2022',
+        name: '',
+        nre: '',
+        year: '',
+        company: '',
+        startdate: getActualDate(),
+        enddate: getActualDate(),
         hours: 400,
       },
       number: '45587854/878-9-8',
