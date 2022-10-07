@@ -27,7 +27,7 @@
   <base-modal
     :show="isOpenSearch"
     @close="handleClose('isOpenSearch')"
-    title="Estamos trabajando en ello"
+    title="Búsqueda de tarea por título"
     @escape="handleClose('isOpenSearch')"
   >
     <task-search></task-search>

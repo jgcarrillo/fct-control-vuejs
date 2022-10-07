@@ -12,10 +12,20 @@
     </td>
   </tr>
 
-  <base-modal :show="isOpenDelete" @close="handleClose('isOpenDelete')" :title="`Borrar tarea - ${title}`">
+  <base-modal
+    :show="isOpenDelete"
+    @close="handleClose('isOpenDelete')"
+    :title="`Borrar tarea - ${title}`"
+    @escape="handleClose('isOpenDelete')"
+  >
     <task-delete :task="this.id" @delete="deleteTask"></task-delete>
   </base-modal>
-  <base-modal :show="isOpenEdit" @close="handleClose('isOpenEdit')" :title="`Editar tarea - ${title}`">
+  <base-modal
+    :show="isOpenEdit"
+    @close="handleClose('isOpenEdit')"
+    :title="`Editar tarea - ${title}`"
+    @escape="handleClose('isOpenEdit')"
+  >
     <task-form :edit="true" :task="getTask()" @update-task="updateTask"></task-form>
   </base-modal>
 </template>

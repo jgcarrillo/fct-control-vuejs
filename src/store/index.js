@@ -27,6 +27,7 @@ const store = createStore({
           hours: 7,
         },
       ],
+      searchTerm: '',
       userData: {
         name: '',
         nre: '',

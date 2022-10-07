@@ -21,4 +21,7 @@ export default {
 
     toast.info('¡Tarea actualizada!');
   },
+  setSearchTerm(state, searchTerm) {
+    state.searchTerm = searchTerm;
+  },
 };

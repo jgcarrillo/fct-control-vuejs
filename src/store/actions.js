@@ -15,4 +15,7 @@ export default {
   updateTask(context, task) {
     context.commit('updateTask', task);
   },
+  setSearchTerm(context, searchTerm) {
+    context.commit('setSearchTerm', searchTerm);
+  },
 };

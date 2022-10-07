@@ -82,7 +82,8 @@ export default {
   },
   computed: {
     getTasks() {
-      const tasks = this.$store.getters.getTasks;
+      const searchTerm = this.$store.getters['getSearchTerm'];
+      const tasks = this.$store.getters.getTasks(searchTerm);
       return tasks;
     },
     hasTasks() {

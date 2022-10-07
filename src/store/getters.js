@@ -1,5 +1,8 @@
 export default {
-  getTasks(state) {
+  getTasks: (state) => (title) => {
+    if (title.length > 0) {
+      return state.tasks.filter((t) => t.title.toLowerCase().includes(title?.toLowerCase()));
+    }
     return state.tasks;
   },
   getUserData(state) {
@@ -27,5 +30,8 @@ export default {
   },
   getRemainingHours(state, getters) {
     return state.userData.hours - getters.getCountHours;
+  },
+  getSearchTerm(state) {
+    return state.searchTerm;
   },
 };
