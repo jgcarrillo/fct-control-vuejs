@@ -41,3 +41,7 @@
 .error {
   @apply text-yellow-600 !important;
 }
+
+.search-not-found {
+  @apply text-center p-2 text-red-700 font-bold italic;
+}

@@ -27,6 +27,7 @@
         </thead>
         <tbody class="divide-y divide-gray-100">
           <task-item-table
+            v-if="getTasks.length > 0"
             v-for="(task, index) in getTasks"
             :key="task.id"
             :index="index"
@@ -37,6 +38,9 @@
             :enddate="task.enddate"
             :hours="task.hours"
           ></task-item-table>
+          <tr v-else>
+            <td class="search-not-found" colspan="7">No hay tareas para la búsqueda seleccionada</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -44,6 +48,7 @@
     <!-- container for divs in sm -->
     <div v-if="hasTasks" class="grid grid-cols-1 gap-4 md:hidden mt-4">
       <task-item-card
+        v-if="getTasks.length > 0"
         v-for="(task, index) in getTasks"
         :key="task.id"
         :index="index"
@@ -54,6 +59,7 @@
         :enddate="task.enddate"
         :hours="task.hours"
       ></task-item-card>
+      <div class="search-not-found">No hay tareas para la búsqueda seleccionada</div>
     </div>
 
     <h3

@@ -11,7 +11,7 @@
         maxlength="40"
         autofocus
         v-model="searchTerm"
-        @keydown="submitForm"
+        @keyup="submitForm"
       />
     </div>
   </div>
