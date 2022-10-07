@@ -1,8 +1,8 @@
 <template>
   <div class="flex flex-row justify-end space-x-4 mb-5">
-    <base-button v-tooltip="'Añade tus datos personales'" class="base-button--outline" id="data" @click="handleOpen($event)">{{
-      getUserData.name !== '' ? 'Actualizar datos' : 'Añadir datos'
-    }}</base-button>
+    <base-button v-tooltip="'Añade tus datos personales'" :class="classButtonUserData" id="data" @click="handleOpen($event)"
+      >{{ getUserData.name !== '' ? 'Actualizar datos' : 'Añadir datos' }}
+    </base-button>
     <base-button class="base-button" id="task" @click="handleOpen($event)">Añadir tarea</base-button>
     <base-button class="base-button" id="search" @click="handleOpen($event)">Buscar</base-button>
     <base-button class="base-button" id="filters" @click="handleOpen($event)">Más filtros</base-button>
@@ -79,6 +79,12 @@ export default {
   computed: {
     getUserData() {
       return this.$store.getters['getUserData'];
+    },
+    classButtonUserData() {
+      return {
+        'base-button--outwarning': this.getUserData.name === '',
+        'base-button--outline': this.getUserData.name !== '',
+      };
     },
   },
 };
