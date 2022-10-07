@@ -9,7 +9,6 @@
         class="form-modal-input"
         placeholder="Mi primera tarea"
         maxlength="40"
-        autofocus
         v-model="searchTerm"
         @keyup="submitForm"
       />

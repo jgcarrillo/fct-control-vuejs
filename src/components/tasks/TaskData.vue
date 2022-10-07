@@ -59,7 +59,7 @@
         :enddate="task.enddate"
         :hours="task.hours"
       ></task-item-card>
-      <div class="search-not-found">No hay tareas para la búsqueda seleccionada</div>
+      <div v-else class="search-not-found">No hay tareas para la búsqueda seleccionada</div>
     </div>
 
     <h3
