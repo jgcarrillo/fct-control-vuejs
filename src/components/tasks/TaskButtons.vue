@@ -12,16 +12,32 @@
     :show="isOpenData"
     @close="handleClose('isOpenData')"
     :title="`${getUserData.name !== '' ? 'Actualiza tus datos académicos' : 'Añade tus datos académicos'}`"
+    @escape="handleClose('isOpenData')"
   >
     <user-data-form @save-data="saveUserData"></user-data-form>
   </base-modal>
-  <base-modal :show="isOpenTask" @close="handleClose('isOpenTask')" title="Introduce una tarea">
+  <base-modal
+    :show="isOpenTask"
+    @close="handleClose('isOpenTask')"
+    title="Introduce una tarea"
+    @escape="handleClose('isOpenTask')"
+  >
     <task-form @save-task="saveTask"></task-form>
   </base-modal>
-  <base-modal :show="isOpenSearch" @close="handleClose('isOpenSearch')" title="Estamos trabajando en ello">
+  <base-modal
+    :show="isOpenSearch"
+    @close="handleClose('isOpenSearch')"
+    title="Estamos trabajando en ello"
+    @escape="handleClose('isOpenSearch')"
+  >
     <task-search></task-search>
   </base-modal>
-  <base-modal :show="isOpenFilters" @close="handleClose('isOpenFilters')" title="Estamos trabajando en ello">
+  <base-modal
+    :show="isOpenFilters"
+    @close="handleClose('isOpenFilters')"
+    title="Estamos trabajando en ello"
+    @escape="handleClose('isOpenFilters')"
+  >
     <task-filters></task-filters>
   </base-modal>
 </template>
@@ -74,6 +90,9 @@ export default {
     saveTask(data) {
       this.$store.dispatch('addTask', data);
       this.isOpenTask = false;
+    },
+    closeWithEscape() {
+      this.isOpenData = false;
     },
   },
   computed: {
