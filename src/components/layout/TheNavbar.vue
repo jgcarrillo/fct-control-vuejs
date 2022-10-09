@@ -1,6 +1,6 @@
 <template>
   <div class="w-full">
-    <ul class="flex flex-row max-w-screen-xl p-5 mx-auto items-center justify-between">
+    <ul class="flex flex-col md:flex-row max-w-screen-xl p-5 mx-auto items-center justify-between">
       <li>
         <base-button link to="/" class="nav-custom-link">Control FCT</base-button>
       </li>

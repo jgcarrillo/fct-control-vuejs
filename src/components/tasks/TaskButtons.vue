@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row justify-end space-x-4 mb-5">
+  <div class="flex flex-col md:flex-row gap-2 justify-center md:justify-end md:space-x-4 mb-5">
     <base-button v-tooltip="'Añade tus datos personales'" :class="classButtonUserData" id="data" @click="handleOpen($event)"
       >{{ getUserData.name !== '' ? 'Actualizar datos' : 'Añadir datos' }}
     </base-button>
