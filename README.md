@@ -1,5 +1,7 @@
 # Control a list of tasks with Vue, Vuex and Vite
 
+[image](docs/cover.JPG)
+
 <div align="center">
     <b>Create, edit and delete a list of task</b>
 </div>
@@ -14,11 +16,32 @@
 
 ## ✨ Main purpose
 
+The main purpose of this project was to **learn the basics of Vue**. In this case I wanted to replicate a web application to **add new tasks** to control the user workflow. You can perform several actions which include:
+
+- Add or update the user data
+- Add new task
+- Search for a specific task by task title
+- Filter task by column: number of task, title (alphabetically) or date
+
+This application uses **Vuex** to manage the internal storage of the tasks as well as the user data and the search term input.
+
 ## 🔥 Set the project locally
+
+To run the project locally you need to simply do the following:
+
+- `git clone https://github.com/jgcarrillo/fct-control-vuejs.git`
+- `npm install`
+- `npm run dev`
 
 ## 🚀 Netlify deployment
 
 ## 🎢 Future improvements
+
+As I said before, this is a dummy project to lear Vue, so several features could be added in the future to make the app more robust. Probably some of them are:
+
+- [] Improve Tailwind CSS, mostly in non-desktop devices
+- [] Better storage management
+- [] Add a database (MongoDB, SQLite) to persist data
 
 ## 🌎 Contact
 
