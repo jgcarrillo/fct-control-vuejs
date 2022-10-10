@@ -21,7 +21,6 @@ The main purpose of this project was to **learn the basics of Vue**. In this cas
 - Add or update the user data
 - Add new task
 - Search for a specific task by task title
-- Filter task by column: number of task, title (alphabetically) or date
 
 This application uses **Vuex** to manage the internal storage of the tasks as well as the user data and the search term input.
 
@@ -50,6 +49,8 @@ As I said before, this is a dummy project to lear Vue, so several features could
 - [ ] Improve Tailwind CSS, mostly in non-desktop devices
 - [ ] Better storage management
 - [ ] Add a database (MongoDB, SQLite) to persist data
+- [ ] Add custom pagination component
+- [ ] Add custom filters, probably search by a range of dates
 
 ## 🌎 Contact
 
