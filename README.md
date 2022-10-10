@@ -35,6 +35,14 @@ To run the project locally you need to simply do the following:
 
 ## 🚀 Netlify deployment
 
+To deploy a **SPA** to Netlify you need to do the following steps:
+
+- Create a new file in _public_ folder called `_redirects`
+- Add `/* /index.html 200` to that file content
+- In Netlify, set `vite build` and `dist` folder to deploy
+
+You can check [this article](https://www.netlify.com/blog/how-to-deploy-vue-3-and-vite-app-in-5-minutes/) about deployment. If you are not going to use a SPA, you probably don't need to set the **redirects** rule
+
 ## 🎢 Future improvements
 
 As I said before, this is a dummy project to lear Vue, so several features could be added in the future to make the app more robust. Probably some of them are:
