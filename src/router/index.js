@@ -9,17 +9,32 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      redirect: '/home',
+    },
+    {
+      path: '/home',
       component: TasksView,
+      meta: {
+        title: 'Home - FCT',
+      },
     },
     {
       path: '/about',
       component: AboutView,
+      meta: {
+        title: 'About',
+      },
     },
     {
       path: '/:notFound(.*)',
       component: NotFoundView,
     },
   ],
+});
+
+router.beforeEach((to, from, next) => {
+  document.title = `${to.meta.title}`;
+  next();
 });
 
 export default router;

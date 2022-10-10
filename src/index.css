@@ -45,3 +45,7 @@
 .search-not-found {
   @apply text-center p-2 text-red-700 font-bold italic;
 }
+
+.custom-mark {
+  @apply p-1 rounded shadow bg-teal-500 text-white;
+}

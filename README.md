@@ -51,6 +51,7 @@ As I said before, this is a dummy project to lear Vue, so several features could
 - [ ] Add a database (MongoDB, SQLite) to persist data
 - [ ] Add custom pagination component
 - [ ] Add custom filters, probably search by a range of dates
+- [ ] Add a 404 page not found error
 
 ## 🌎 Contact
 
