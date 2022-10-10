@@ -34,7 +34,7 @@ export const getActualDate = () => {
   const splitDate = isoDate.split('/');
   let [day, month, year] = splitDate;
 
-  if (day >= 1 || day <= 9) {
+  if (day >= 1 && day <= 9) {
     day = `0${day}`;
   }
 
