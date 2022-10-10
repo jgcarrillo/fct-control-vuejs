@@ -1,6 +1,6 @@
 # Control a list of tasks with Vue, Vuex and Vite
 
-[image](docs/cover.JPG)
+![image](docs/cover.JPG)
 
 <div align="center">
     <b>Create, edit and delete a list of task</b>
@@ -39,9 +39,9 @@ To run the project locally you need to simply do the following:
 
 As I said before, this is a dummy project to lear Vue, so several features could be added in the future to make the app more robust. Probably some of them are:
 
-- [] Improve Tailwind CSS, mostly in non-desktop devices
-- [] Better storage management
-- [] Add a database (MongoDB, SQLite) to persist data
+- [ ] Improve Tailwind CSS, mostly in non-desktop devices
+- [ ] Better storage management
+- [ ] Add a database (MongoDB, SQLite) to persist data
 
 ## 🌎 Contact
 
