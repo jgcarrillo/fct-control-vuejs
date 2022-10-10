@@ -1,7 +1,10 @@
 <template>
   <teleport to="body">
     <Transition name="modal">
-      <div v-if="show" class="fixed top-0 right-0 left-0 z-50 w-full h-full md:inset-0 bg-slate-400 bg-opacity-40">
+      <div
+        v-if="show"
+        class="fixed top-0 right-0 left-0 z-50 w-full h-full md:inset-0 bg-slate-400 bg-opacity-40 overflow-y-auto overflow-x-hidden"
+      >
         <div class="relative p-4 max-w-md mx-auto">
           <!-- Modal content -->
           <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
